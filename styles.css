@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template: repeat(12, 1fr) / repeat(12, 1fr);
+  grid: repeat(12, 1fr) / repeat(12, 1fr);
   margin: 0px;
   height: 100vh;
   font-family: "Open Sans", sans-serif;
@@ -12,37 +12,153 @@ h2 {
 }
 
 h3 {
-  font-size: 0.75em;
+  font-size: 0.8em;
+}
+
+h4 {
+  font-size: 0.6em;
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-content: start;
   gap: 15px;
-  grid-area: 1 / 1 / 13 / 4;
-  background-color: #67e8f9;
-  color: white;
   padding: 15px;
+  grid-area: 1 / 1 / 13 / 3;
+  background-color: #14b8a6;
+  color: white;
+  z-index: 2;
+  box-shadow: 0px 0px 3px 1px rgb(150, 150, 150);
+}
+
+.sidebar-title {
+  display: grid;
+  grid: 1fr / 45px 1fr;
+  align-items: center;
+  margin: 0px;
 }
 
 .header {
   display: grid;
-  grid-area: 1 / 1 / 4 / 13;
+  grid-area: 1 / 3 / 4 / 13;
+  grid: 1fr 2fr / 2fr 1fr;
+  padding: 20px 40px 20px 40px;
+  z-index: 1;
+  box-shadow: 0px 0px 3px 1px rgb(150, 150, 150);
 }
 
-.articles {
-  display: grid;
-  background-color: #ecfeff;
-  grid-area: 3 / 4 / 13 / 13;
-}
-
-.sidebar-title {
+.search-field {
   display: flex;
+  grid: 1fr / 1fr 10fr;
+  align-items: center;
+  padding-right: 50px;
+}
+
+input[type="text"] {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  flex: 1 1 auto;
+  color: rgb(150, 150, 150);
+  padding-left: 10px;
+  height: 20px;
+  background-color: #ccfbf1;
+  border-style: hidden;
+  border-radius: 10px;
+}
+input:focus {
+  border: 1px solid rgb(225, 225, 225);
+}
+
+.notifications {
+  grid: 1fr / 1fr 3fr 5fr;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.profile {
+  display: flex;
+  padding-right: 50px;
+  padding-left: 10px;
+}
+
+.profile-content {
+  display: flex;
+  flex: 1;
+  gap: 15px;
   align-items: center;
 }
 
-.white-icons {
+.header-profile-text {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.inner-profile-text {
+  margin: 0px;
+}
+
+.actions {
+  display: grid;
+  grid: 1fr / 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.actions > div {
+  display: flex;
+  background-color: #14b8a6;
+  color: white;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 0.7em;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainpage {
+  display: grid;
+  grid-area: 4 / 3 / 13 / 13;
+  grid: repeat(8, 1fr) / repeat(7, 1fr);
+  background-color: #ccfbf1;
+  padding: 15px;
+  gap: 15px;
+}
+
+.projects {
+  grid-area: 1 / 1 / 9 / 6;
+}
+
+.plaincard {
+  background-color: white;
+}
+
+.announcements {
+  grid-area: 1 / 6 / 5 / 8;
+}
+
+.trending {
+  display: flex;
+  grid-area: 5 / 6 / 9 / 8;
+}
+
+.whiteicons {
+  justify-self: end;
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(351deg) brightness(103%) contrast(103%);
   width: 1.5em;
-  padding: 0.5em;
+  height: 1.5em;
+  padding: 10px;
+}
+
+.coloricons {
+  justify-self: end;
+  /* filter: invert(90%) sepia(0%) saturate(100%) hue-rotate(360deg) brightness(100%) contrast(100%); */
+  width: 1.25em;
+  padding: 10px;
+}
+
+.profileimagesmall {
+  width: 2.5em;
 }
