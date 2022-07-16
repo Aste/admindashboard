@@ -213,7 +213,6 @@ hr.solid {
 .trendingcard {
   display: flex;
   flex-direction: column;
-  outline: red solid 1px;
   padding: 30px;
   justify-content: space-around;
 }
