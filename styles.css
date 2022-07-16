@@ -1,5 +1,6 @@
 body {
   display: grid;
+
   grid: repeat(12, 1fr) / repeat(12, 1fr);
   margin: 0px;
   /* min-height: 100vh; */
